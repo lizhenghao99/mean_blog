@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Preview Post</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+</head>
+<body>
+    <div class="w3-container w3-flat-green-sea"><h1>Preview Post</h1></div>
+    <% if (single) { %>
+        <div class="w3-container">
+            <h1 id="title"><%- title %></h1>
+        </div> 
+        <div class="w3-container"><%- body %></div>
+    <% } else { %>
+        <% for( let index = start; index < end; index++ ) { %>
+            <div class="w3-container">
+            <h1 id="title"><%- titles[index] %></h1>
+            </div> 
+            <div class="w3-container"><%- bodies[index] %></div>
+        <% } %>
+        <% if (url) { %>
+            <div class="w3-container">
+            <a id="next" href="<%= url%>">Next Page</a>
+            </div>
+        <% } %>
+    <% } %>  
+</body>
+</html>

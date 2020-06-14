@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+</head>
+<body>
+    <div class="w3-container w3-flat-green-sea"><h1>Edit Post</h1></div>
+    <form action="/login" method="POST">
+        <% if (redirect) { %>
+            <input type="hidden" name="redirect" value="<%= redirect%>">
+        <% } %>
+        <div class="w3-container w3-margin">
+            <label class="w3-large" for="username">Username</label>
+            <input class="w3-input w3-border w3-round" type="text" id="username" name="username" placeholder="username">
+        </div>
+        <div class="w3-container w3-margin">
+            <label class="w3-large" for="password">Password</label>
+            <input class="w3-input w3-border w3-round" type="password" id="password" name="password" placeholder="password">
+        </div>
+        <div class="w3-container w3-margin">
+            <button class="w3-button w3-border w3-flat-turquoise w3-hover-pale-green" type="submit" name="login" value="login">Login</button>
+        </div>
+
+        
+        <% if (success) { %>
+        <div class="w3-panel w3-pale-green">
+            <h3>Authentication Successful</h3>
+        </div>
+        <% } %>
+
+        <% if (failure) { %>
+        <div class="w3-panel w3-pale-red">
+            <h3>Authentication Failed</h3>
+        </div>
+        <% } %>
+        
+    </form>
+</body>
+</html>
